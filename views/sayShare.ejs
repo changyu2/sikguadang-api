@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="title" content="<%= content.title %>"/>
+    <meta name="referrer" content="origin-when-crossorigin"/>
+    <meta name="description" content="<%= content.description %>"/>
+    <meta name="author" content="SAY"/>
+
+    <meta property="og:site_name" content="Save 12'"/>
+    <meta property="og:title" content="<%= content.title %>" data-meta="title"/>
+    <meta property="og:description" content="<%= content.description %>" data-meta="description"/>
+    <meta property="og:image" content="<%= content.shareThumbnailUrl %>" data-meta="image"/>
+    <meta property="og:type" content="website"/>
+    <!-- 아래 태그가 있으면 카카오톡 url 동작 안함.-->
+    <!--<meta property="og:url" content="<%= content.url %>" data-meta="url"/>
+    <meta property="al:web:url" content="<%= content.url %>"/>-->
+    <!-- facebook warning -->
+    <!--<meta property="article:author" content="<%= content.authorName %>"/>-->
+    <link rel=“canonical" href="https://save12minutes.com/say/<%= content.customUrl %>"/>
+    <title>Save 12'</title>
+</head>
+<body>
+<article class="cover">
+    <h1><%= content.title %></h1>
+    <p><%= content.description %></p>
+    <span><%= content.description %></span>
+    <img src="<%= content.shareThumbnailUrl %>" alt="<%= content.title %>" title="<%= content.title %>"/>
+</article>
+<footer>
+    <a href="http://fave.company/" target="_blank">회사소개</a>
+</footer>
+</body>
+</html>

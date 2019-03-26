@@ -1,0 +1,76 @@
+2019-03-25 13:53:40.385 INFO env : local
+2019-03-25 13:53:40.385 INFO log level : debug
+2019-03-25 13:53:40.394 ERROR uncaughtException: Cannot find module 'less-middleware'
+	{"date":"Mon Mar 25 2019 13:53:40 GMT+0900 (GMT+09:00)","process":{"pid":66838,"uid":501,"gid":20,"cwd":"/Users/changyu/Documents/dev/sikguadang-api","execPath":"/usr/local/bin/node","version":"v10.15.1","argv":["/usr/local/bin/node","/Users/changyu/Documents/dev/sikguadang-api/bin/www"],"memoryUsage":{"rss":50909184,"heapTotal":35373056,"heapUsed":18584080,"external":18546447}},"os":{"loadavg":[2.0986328125,2.81103515625,2.73291015625],"uptime":2844643},"trace":[{"column":15,"file":"internal/modules/cjs/loader.js","function":"Module._resolveFilename","line":581,"method":"_resolveFilename","native":false},{"column":25,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":507,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":637,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":22,"method":null,"native":false},{"column":9,"file":"/Users/changyu/Documents/dev/sikguadang-api/app.js","function":null,"line":42,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":689,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":700,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":599,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":538,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":530,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":637,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":22,"method":null,"native":false},{"column":76,"file":"/Users/changyu/Documents/dev/sikguadang-api/bin/www","function":null,"line":1,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":689,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":700,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":599,"method":"load","native":false}],"stack":["Error: Cannot find module 'less-middleware'","    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:581:15)","    at Function.Module._load (internal/modules/cjs/loader.js:507:25)","    at Module.require (internal/modules/cjs/loader.js:637:17)","    at require (internal/modules/cjs/helpers.js:22:18)","    at Object.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/app.js:42:9)","    at Module._compile (internal/modules/cjs/loader.js:689:30)","    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)","    at Module.load (internal/modules/cjs/loader.js:599:32)","    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)","    at Function.Module._load (internal/modules/cjs/loader.js:530:3)","    at Module.require (internal/modules/cjs/loader.js:637:17)","    at require (internal/modules/cjs/helpers.js:22:18)","    at Object.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/bin/www:1:76)","    at Module._compile (internal/modules/cjs/loader.js:689:30)","    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)","    at Module.load (internal/modules/cjs/loader.js:599:32)"]}
+2019-03-25 13:53:40.394 WARNING uncaughtException ===
+2019-03-25 13:53:40.396 WARNING Error: Cannot find module 'less-middleware'
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:581:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:507:25)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+    at Object.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/app.js:42:9)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+    at Object.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/bin/www:1:76)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+2019-03-25 13:53:40.399 ERROR About to exit with code: 1
+2019-03-25 13:54:18.820 INFO env : local
+2019-03-25 13:54:18.821 INFO log level : debug
+2019-03-26 09:34:06.648 INFO env : local
+2019-03-26 09:34:06.649 INFO log level : debug
+2019-03-26 09:34:36.902 ERROR 
+	{"message":"failed to connect to server [52.79.131.104:26017] on first connect [MongoNetworkError: connection 0 to 52.79.131.104:26017 timed out]","stack":"MongoNetworkError: failed to connect to server [52.79.131.104:26017] on first connect [MongoNetworkError: connection 0 to 52.79.131.104:26017 timed out]\n    at Pool.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongodb-core/lib/topologies/server.js:564:11)\n    at Pool.emit (events.js:189:13)\n    at Connection.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongodb-core/lib/connection/pool.js:317:12)\n    at Object.onceWrapper (events.js:277:13)\n    at Connection.emit (events.js:189:13)\n    at Socket.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongodb-core/lib/connection/connection.js:257:10)\n    at Object.onceWrapper (events.js:277:13)\n    at Socket.emit (events.js:189:13)\n    at Socket._onTimeout (net.js:443:8)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)","name":"MongoNetworkError","errorLabels":["TransientTransactionError"]}
+2019-03-26 09:34:37.902 ERROR About to exit with code: 0
+2019-03-26 09:35:50.235 INFO env : local
+2019-03-26 09:35:50.236 INFO log level : debug
+2019-03-26 09:35:50.418 ERROR 
+	{"message":"failed to connect to server [localhost:27017] on first connect [MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017]","stack":"MongoNetworkError: failed to connect to server [localhost:27017] on first connect [MongoNetworkError: connect ECONNREFUSED 127.0.0.1:27017]\n    at Pool.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongodb-core/lib/topologies/server.js:564:11)\n    at Pool.emit (events.js:189:13)\n    at Connection.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongodb-core/lib/connection/pool.js:317:12)\n    at Object.onceWrapper (events.js:277:13)\n    at Connection.emit (events.js:189:13)\n    at Socket.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongodb-core/lib/connection/connection.js:246:50)\n    at Object.onceWrapper (events.js:277:13)\n    at Socket.emit (events.js:189:13)\n    at emitErrorNT (internal/streams/destroy.js:82:8)\n    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)\n    at process._tickCallback (internal/process/next_tick.js:63:19)","name":"MongoNetworkError","errorLabels":["TransientTransactionError"]}
+2019-03-26 09:35:51.418 ERROR About to exit with code: 0
+2019-03-26 21:34:15.885 INFO env : local
+2019-03-26 21:34:15.886 INFO log level : debug
+2019-03-26 21:34:16.806 ERROR 
+	{"message":"connection 0 to sikguadang-shard-00-00-vlvwm.mongodb.net:27017 closed","stack":"MongoNetworkError: connection 0 to sikguadang-shard-00-00-vlvwm.mongodb.net:27017 closed\n    at Socket.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongodb-core/lib/connection/connection.js:276:9)\n    at Object.onceWrapper (events.js:277:13)\n    at Socket.emit (events.js:189:13)\n    at TCP._handle.close (net.js:600:12)","name":"MongoNetworkError","errorLabels":["TransientTransactionError"]}
+2019-03-26 21:34:17.807 ERROR About to exit with code: 0
+2019-03-26 21:34:36.008 INFO env : local
+2019-03-26 21:34:36.009 INFO log level : debug
+2019-03-26 21:34:36.643 ERROR 
+	{"message":"connection 0 to sikguadang-shard-00-00-vlvwm.mongodb.net:27017 closed","stack":"MongoNetworkError: connection 0 to sikguadang-shard-00-00-vlvwm.mongodb.net:27017 closed\n    at Socket.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongodb-core/lib/connection/connection.js:276:9)\n    at Object.onceWrapper (events.js:277:13)\n    at Socket.emit (events.js:189:13)\n    at TCP._handle.close (net.js:600:12)","name":"MongoNetworkError","errorLabels":["TransientTransactionError"]}
+2019-03-26 21:34:37.644 ERROR About to exit with code: 0
+2019-03-26 21:34:59.384 INFO env : local
+2019-03-26 21:34:59.384 INFO log level : debug
+2019-03-26 21:35:00.004 ERROR 
+	{"message":"connection 0 to sikguadang-shard-00-00-vlvwm.mongodb.net:27017 closed","stack":"MongoNetworkError: connection 0 to sikguadang-shard-00-00-vlvwm.mongodb.net:27017 closed\n    at Socket.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongodb-core/lib/connection/connection.js:276:9)\n    at Object.onceWrapper (events.js:277:13)\n    at Socket.emit (events.js:189:13)\n    at TCP._handle.close (net.js:600:12)","name":"MongoNetworkError","errorLabels":["TransientTransactionError"]}
+2019-03-26 21:35:01.006 ERROR About to exit with code: 0
+2019-03-26 21:39:50.246 INFO env : local
+2019-03-26 21:39:50.247 INFO log level : debug
+2019-03-26 21:39:52.947 INFO Connected to mongod server
+2019-03-26 21:40:39.820 INFO env : local
+2019-03-26 21:40:39.821 INFO log level : debug
+2019-03-26 21:40:42.194 INFO Connected to mongod server
+2019-03-26 22:18:56.919 ERROR uncaughtException: Cannot find module 'bcrypt'
+	{"date":"Tue Mar 26 2019 22:18:56 GMT+0900 (GMT+09:00)","process":{"pid":9565,"uid":501,"gid":20,"cwd":"/Users/changyu/Documents/dev/sikguadang-api","execPath":"/usr/local/bin/node","version":"v10.15.1","argv":["/usr/local/bin/node","/Users/changyu/Documents/dev/sikguadang-api/bin/www"],"memoryUsage":{"rss":51351552,"heapTotal":35897344,"heapUsed":18485832,"external":18539874}},"os":{"loadavg":[2.7900390625,3.41845703125,3.08984375],"uptime":2961351},"trace":[{"column":15,"file":"internal/modules/cjs/loader.js","function":"Module._resolveFilename","line":581,"method":"_resolveFilename","native":false},{"column":25,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":507,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":637,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":22,"method":null,"native":false},{"column":16,"file":"/Users/changyu/Documents/dev/sikguadang-api/routes/sikguadang/api/usersRouter.js","function":null,"line":4,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":689,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":700,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":599,"method":"load","native":false},{"column":12,"file":"internal/modules/cjs/loader.js","function":"tryModuleLoad","line":538,"method":null,"native":false},{"column":3,"file":"internal/modules/cjs/loader.js","function":"Module._load","line":530,"method":"_load","native":false},{"column":17,"file":"internal/modules/cjs/loader.js","function":"Module.require","line":637,"method":"require","native":false},{"column":18,"file":"internal/modules/cjs/helpers.js","function":"require","line":22,"method":null,"native":false},{"column":21,"file":"/Users/changyu/Documents/dev/sikguadang-api/app.js","function":null,"line":18,"method":null,"native":false},{"column":30,"file":"internal/modules/cjs/loader.js","function":"Module._compile","line":689,"method":"_compile","native":false},{"column":10,"file":"internal/modules/cjs/loader.js","function":"Module._extensions..js","line":700,"method":".js","native":false},{"column":32,"file":"internal/modules/cjs/loader.js","function":"Module.load","line":599,"method":"load","native":false}],"stack":["Error: Cannot find module 'bcrypt'","    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:581:15)","    at Function.Module._load (internal/modules/cjs/loader.js:507:25)","    at Module.require (internal/modules/cjs/loader.js:637:17)","    at require (internal/modules/cjs/helpers.js:22:18)","    at Object.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/routes/sikguadang/api/usersRouter.js:4:16)","    at Module._compile (internal/modules/cjs/loader.js:689:30)","    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)","    at Module.load (internal/modules/cjs/loader.js:599:32)","    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)","    at Function.Module._load (internal/modules/cjs/loader.js:530:3)","    at Module.require (internal/modules/cjs/loader.js:637:17)","    at require (internal/modules/cjs/helpers.js:22:18)","    at Object.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/app.js:18:21)","    at Module._compile (internal/modules/cjs/loader.js:689:30)","    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)","    at Module.load (internal/modules/cjs/loader.js:599:32)"]}
+2019-03-26 22:19:52.250 INFO env : local
+2019-03-26 22:19:52.251 INFO log level : debug
+2019-03-26 22:19:54.954 INFO Connected to mongod server
+2019-03-26 22:59:50.584 INFO env : local
+2019-03-26 22:59:50.584 INFO log level : debug
+2019-03-26 22:59:54.099 INFO Connected to mongod server
+2019-03-26 23:07:36.129 INFO env : local
+2019-03-26 23:07:36.130 INFO log level : debug
+2019-03-26 23:07:40.185 INFO Connected to mongod server
+2019-03-26 23:10:45.554 INFO env : local
+2019-03-26 23:10:45.555 INFO log level : debug
+2019-03-26 23:10:48.662 INFO Connected to mongod server
+2019-03-26 23:14:13.023 INFO env : local
+2019-03-26 23:14:13.024 INFO log level : debug
+2019-03-26 23:14:16.375 INFO Connected to mongod server
+2019-03-26 23:15:24.415 INFO env : local
+2019-03-26 23:15:24.416 INFO log level : debug
+2019-03-26 23:15:28.279 INFO Connected to mongod server
