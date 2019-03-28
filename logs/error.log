@@ -74,3 +74,170 @@
 2019-03-26 23:15:24.415 INFO env : local
 2019-03-26 23:15:24.416 INFO log level : debug
 2019-03-26 23:15:28.279 INFO Connected to mongod server
+2019-03-27 00:06:56.605 INFO env : local
+2019-03-27 00:06:56.606 INFO log level : debug
+2019-03-27 00:06:59.010 INFO Connected to mongod server
+2019-03-27 21:11:46.561 INFO env : local
+2019-03-27 21:11:46.562 INFO log level : debug
+2019-03-27 21:11:49.485 INFO Connected to mongod server
+2019-03-27 21:39:10.749 INFO env : local
+2019-03-27 21:39:10.750 INFO log level : debug
+2019-03-27 21:39:13.816 INFO Connected to mongod server
+2019-03-27 21:48:25.361 INFO env : local
+2019-03-27 21:48:25.362 INFO log level : debug
+2019-03-27 21:48:27.599 INFO Connected to mongod server
+2019-03-27 21:49:48.004 INFO env : local
+2019-03-27 21:49:48.005 INFO log level : debug
+2019-03-27 21:49:50.443 INFO Connected to mongod server
+2019-03-27 21:52:14.162 INFO env : local
+2019-03-27 21:52:14.163 INFO log level : debug
+2019-03-27 21:52:16.371 INFO Connected to mongod server
+2019-03-27 21:53:25.034 INFO env : local
+2019-03-27 21:53:25.035 INFO log level : debug
+2019-03-27 21:53:27.369 INFO Connected to mongod server
+2019-03-27 21:53:59.257 INFO env : local
+2019-03-27 21:53:59.258 INFO log level : debug
+2019-03-27 21:54:01.343 INFO Connected to mongod server
+2019-03-27 21:54:15.679 ERROR uncaughtException: Cannot read property 'password' of null
+	{"date":"Wed Mar 27 2019 21:54:15 GMT+0900 (GMT+09:00)","process":{"pid":36201,"uid":501,"gid":20,"cwd":"/Users/changyu/Documents/dev/sikguadang-api","execPath":"/usr/local/bin/node","version":"v10.15.1","argv":["/usr/local/bin/node","/Users/changyu/Documents/dev/sikguadang-api/bin/www"],"memoryUsage":{"rss":53170176,"heapTotal":26472448,"heapUsed":21452336,"external":18724432}},"os":{"loadavg":[2.10302734375,2.21337890625,2.2900390625],"uptime":3046266},"trace":[{"column":34,"file":"/Users/changyu/Documents/dev/sikguadang-api/routes/sikguadang/api/usersRouter.js","function":null,"line":153,"method":null,"native":false},{"column":16,"file":"/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/model.js","function":null,"line":4698,"method":null,"native":false},{"column":12,"file":"/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js","function":null,"line":4099,"method":null,"native":false},{"column":12,"file":"/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js","function":"model.Query.Query._completeOne","line":1933,"method":"_completeOne","native":false},{"column":10,"file":"/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js","function":"Immediate.Query.base.findOne.call","line":1993,"method":"call","native":false},{"column":16,"file":"/Users/changyu/Documents/dev/sikguadang-api/node_modules/mquery/lib/utils.js","function":null,"line":116,"method":null,"native":false},{"column":18,"file":"timers.js","function":"runCallback","line":705,"method":null,"native":false},{"column":5,"file":"timers.js","function":"tryOnImmediate","line":676,"method":null,"native":false},{"column":5,"file":"timers.js","function":"processImmediate","line":658,"method":null,"native":false}],"stack":["TypeError: Cannot read property 'password' of null","    at /Users/changyu/Documents/dev/sikguadang-api/routes/sikguadang/api/usersRouter.js:153:34","    at /Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/model.js:4698:16","    at /Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js:4099:12","    at model.Query.Query._completeOne (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js:1933:12)","    at Immediate.Query.base.findOne.call (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js:1993:10)","    at Immediate.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mquery/lib/utils.js:116:16)","    at runCallback (timers.js:705:18)","    at tryOnImmediate (timers.js:676:5)","    at processImmediate (timers.js:658:5)"]}
+2019-03-27 21:54:15.680 WARNING uncaughtException ===
+2019-03-27 21:54:15.680 WARNING TypeError: Cannot read property 'password' of null
+    at /Users/changyu/Documents/dev/sikguadang-api/routes/sikguadang/api/usersRouter.js:153:34
+    at /Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/model.js:4698:16
+    at /Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js:4099:12
+    at model.Query.Query._completeOne (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js:1933:12)
+    at Immediate.Query.base.findOne.call (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js:1993:10)
+    at Immediate.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mquery/lib/utils.js:116:16)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+2019-03-27 21:54:15.682 ERROR About to exit with code: 1
+2019-03-27 22:03:07.859 INFO env : local
+2019-03-27 22:03:07.860 INFO log level : debug
+2019-03-27 22:03:10.705 INFO Connected to mongod server
+2019-03-27 22:15:56.926 INFO env : local
+2019-03-27 22:15:56.927 INFO log level : debug
+2019-03-27 22:15:59.522 INFO Connected to mongod server
+2019-03-27 22:26:48.405 INFO env : local
+2019-03-27 22:26:48.406 INFO log level : debug
+2019-03-27 22:26:50.866 INFO Connected to mongod server
+2019-03-27 22:36:45.954 INFO env : local
+2019-03-27 22:36:45.955 INFO log level : debug
+2019-03-27 22:36:49.820 INFO Connected to mongod server
+2019-03-27 22:37:06.209 WARNING DeprecationWarning
+2019-03-27 22:37:06.209 WARNING collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+2019-03-27 22:37:06.210 WARNING DeprecationWarning: collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+    at NativeCollection.(anonymous function) [as findAndModify] (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:146:28)
+    at NodeCollection.findAndModify (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mquery/lib/collection/node.js:123:19)
+    at model.Query.Query._findAndModify (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js:3376:22)
+    at model.Query.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js:2831:8)
+    at model.Query._wrappedThunk [as _findOneAndUpdate] (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)
+    at process.nextTick (/Users/changyu/Documents/dev/sikguadang-api/node_modules/kareem/index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-03-27 22:45:45.412 INFO env : local
+2019-03-27 22:45:45.413 INFO log level : debug
+2019-03-27 22:45:48.545 INFO Connected to mongod server
+2019-03-27 22:47:54.287 WARNING DeprecationWarning
+2019-03-27 22:47:54.288 WARNING collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+2019-03-27 22:47:54.289 WARNING DeprecationWarning: collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+    at NativeCollection.(anonymous function) [as findAndModify] (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:146:28)
+    at NodeCollection.findAndModify (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mquery/lib/collection/node.js:123:19)
+    at model.Query.Query._findAndModify (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js:3376:22)
+    at model.Query.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js:2831:8)
+    at model.Query._wrappedThunk [as _findOneAndUpdate] (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)
+    at process.nextTick (/Users/changyu/Documents/dev/sikguadang-api/node_modules/kareem/index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-03-27 22:55:58.239 INFO env : local
+2019-03-27 22:55:58.240 INFO log level : debug
+2019-03-27 22:56:00.903 INFO Connected to mongod server
+2019-03-27 22:56:24.422 INFO env : local
+2019-03-27 22:56:24.423 INFO log level : debug
+2019-03-27 22:56:31.697 INFO Connected to mongod server
+2019-03-27 22:56:36.266 WARNING DeprecationWarning
+2019-03-27 22:56:36.266 WARNING collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+2019-03-27 22:56:36.267 WARNING DeprecationWarning: collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+    at NativeCollection.(anonymous function) [as findAndModify] (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:146:28)
+    at NodeCollection.findAndModify (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mquery/lib/collection/node.js:123:19)
+    at model.Query.Query._findAndModify (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js:3376:22)
+    at model.Query.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js:2831:8)
+    at model.Query._wrappedThunk [as _findOneAndUpdate] (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)
+    at process.nextTick (/Users/changyu/Documents/dev/sikguadang-api/node_modules/kareem/index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-03-27 23:18:16.796 INFO env : local
+2019-03-27 23:18:16.797 INFO log level : debug
+2019-03-27 23:18:18.949 INFO Connected to mongod server
+2019-03-27 23:18:48.432 WARNING DeprecationWarning
+2019-03-27 23:18:48.433 WARNING collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+2019-03-27 23:18:48.435 WARNING DeprecationWarning: collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+    at NativeCollection.(anonymous function) [as findAndModify] (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:146:28)
+    at NodeCollection.findAndModify (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mquery/lib/collection/node.js:123:19)
+    at model.Query.Query._findAndModify (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js:3376:22)
+    at model.Query.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js:2831:8)
+    at model.Query._wrappedThunk [as _findOneAndUpdate] (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)
+    at process.nextTick (/Users/changyu/Documents/dev/sikguadang-api/node_modules/kareem/index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-03-27 23:20:08.767 INFO env : local
+2019-03-27 23:20:08.768 INFO log level : debug
+2019-03-27 23:20:08.919 ERROR 
+	{"message":"Invalid mongodb uri. Must begin with \"mongodb://\"\n  Received: mongodb+srv://root:123456!@sikguadang-vlvwm.mongodb.net/sikguadang_db","stack":"Error: Invalid mongodb uri. Must begin with \"mongodb://\"\n  Received: mongodb+srv://root:123456!@sikguadang-vlvwm.mongodb.net/sikguadang_db\n    at muri (/Users/changyu/Documents/dev/sikguadang-api/node_modules/muri/lib/index.js:28:11)\n    at NativeConnection.Connection._handleOpenArgs (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/connection.js:199:16)\n    at NativeConnection.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/connection.js:309:37)\n    at NativeConnection.deprecated [as open] (internal/util.js:66:15)\n    at Mongoose.connect (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/index.js:268:47)\n    at Object.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/app.js:65:10)\n    at Module._compile (internal/modules/cjs/loader.js:689:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)\n    at Module.load (internal/modules/cjs/loader.js:599:32)\n    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)\n    at Function.Module._load (internal/modules/cjs/loader.js:530:3)\n    at Module.require (internal/modules/cjs/loader.js:637:17)\n    at require (internal/modules/cjs/helpers.js:22:18)\n    at Object.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/bin/www:7:13)\n    at Module._compile (internal/modules/cjs/loader.js:689:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)"}
+2019-03-27 23:20:08.927 WARNING DeprecationWarning
+2019-03-27 23:20:08.927 WARNING `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2019-03-27 23:20:08.935 WARNING DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+    at Mongoose.connect (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/index.js:268:47)
+    at Object.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/app.js:65:10)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+    at Object.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/bin/www:7:13)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:742:12)
+2019-03-27 23:20:48.269 INFO env : local
+2019-03-27 23:20:48.270 INFO log level : debug
+2019-03-27 23:20:48.420 WARNING DeprecationWarning
+2019-03-27 23:20:48.420 WARNING `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2019-03-27 23:20:48.421 WARNING DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+    at Mongoose.connect (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/index.js:268:47)
+    at Object.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/app.js:65:10)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Module.require (internal/modules/cjs/loader.js:637:17)
+    at require (internal/modules/cjs/helpers.js:22:18)
+    at Object.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/bin/www:7:13)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:530:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:742:12)
+2019-03-27 23:20:48.451 ERROR 
+	{"message":"failed to connect to server [sikguadang-vlvwm.mongodb.net:27017] on first connect [MongoError: getaddrinfo ENOTFOUND sikguadang-vlvwm.mongodb.net sikguadang-vlvwm.mongodb.net:27017]","name":"MongoError","stack":"MongoError: failed to connect to server [sikguadang-vlvwm.mongodb.net:27017] on first connect [MongoError: getaddrinfo ENOTFOUND sikguadang-vlvwm.mongodb.net sikguadang-vlvwm.mongodb.net:27017]\n    at Pool.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongodb-core/lib/topologies/server.js:336:35)\n    at Pool.emit (events.js:189:13)\n    at Connection.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongodb-core/lib/connection/pool.js:280:12)\n    at Object.onceWrapper (events.js:277:13)\n    at Connection.emit (events.js:189:13)\n    at Socket.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongodb-core/lib/connection/connection.js:187:49)\n    at Object.onceWrapper (events.js:277:13)\n    at Socket.emit (events.js:189:13)\n    at emitErrorNT (internal/streams/destroy.js:82:8)\n    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)\n    at process._tickCallback (internal/process/next_tick.js:63:19)","isOperational":true}
+2019-03-27 23:21:26.608 INFO env : local
+2019-03-27 23:21:26.609 INFO log level : debug
+2019-03-27 23:21:28.989 INFO Connected to mongod server
+2019-03-27 23:21:34.536 WARNING DeprecationWarning
+2019-03-27 23:21:34.536 WARNING collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+2019-03-27 23:21:34.538 WARNING DeprecationWarning: collection.findAndModify is deprecated. Use findOneAndUpdate, findOneAndReplace or findOneAndDelete instead.
+    at NativeCollection.(anonymous function) [as findAndModify] (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:146:28)
+    at NodeCollection.findAndModify (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mquery/lib/collection/node.js:123:19)
+    at model.Query.Query._findAndModify (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js:3382:22)
+    at model.Query.<anonymous> (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/query.js:2837:8)
+    at model.Query._wrappedThunk [as _findOneAndUpdate] (/Users/changyu/Documents/dev/sikguadang-api/node_modules/mongoose/lib/helpers/query/wrapThunk.js:16:8)
+    at process.nextTick (/Users/changyu/Documents/dev/sikguadang-api/node_modules/kareem/index.js:369:33)
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+2019-03-27 23:23:18.383 INFO env : local
+2019-03-27 23:23:18.385 INFO log level : debug
+2019-03-27 23:23:21.600 INFO Connected to mongod server
+2019-03-28 11:57:20.422 INFO env : local
+2019-03-28 11:57:20.423 INFO log level : debug
+2019-03-28 11:57:22.918 INFO Connected to mongod server

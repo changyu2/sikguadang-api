@@ -13,6 +13,7 @@ const morgan = require("morgan");
 const logger = require("morgan");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+mongoose.set("useFindAndModify", false);
 
 // routers
 const usersRouter = require("./routes/sikguadang/api/usersRouter");

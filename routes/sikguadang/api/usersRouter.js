@@ -135,33 +135,35 @@ router.post("/sign_in", function(req, res, next) {
 });
 function getUserByUserIdAndPassword(data) {
   return new Promise(function(resolve, reject) {
-    const userId = data.body.userId;
-    const password = data.body.password;
     const query = {};
+    query.userId = data.body.userId;
+    query.password = data.body.password;
     query.status = apiConst.status.active;
     query.ldate = { $gt: moment().subtract(1, "years") };
-    if (!util.isNullOrUndefined(userId) && !util.isNullOrUndefined(password)) {
-      query.userId = userId;
-    } else {
-      return reject(responseCode.paramError);
-    }
+    const userId = data.body.userId;
+    const password = data.body.password;
+    // if (!util.isNullOrUndefined(userId) && !util.isNullOrUndefined(password)) {
+    //   query.userId = userId;
+    // } else {
+    //   return reject(responseCode.paramError);
+    // }
     UsersDocument.findOneAndUpdate(
-      query,
-      { ldate: data.now },
+      { userId: userId },
+      { $set: { ldate: data.now } },
       { new: true },
       function(err, userDocument) {
         if (err) return reject(err);
-        if (!userDocument) return reject(responseCode.signInError);
+        if (!userDocument) return reject(responseCode.resourceNotFound);
         bcrypt.compare(password, userDocument.password, function(err, res) {
           if (res == false) {
             return reject(responseCode.signInError);
           }
           ///추후 필요하면 추가.
           const user = {};
-          user.email = userDocument.email;
+          user.userId = userDocument.userId;
           user.userName = userDocument.userName;
-          user.nickName = userDocument.nickName;
           user.phoneNumber = userDocument.phoneNumber;
+          user.email = userDocument.email;
 
           data.user = user;
           return resolve(data);
@@ -172,7 +174,7 @@ function getUserByUserIdAndPassword(data) {
 }
 function createToken(data) {
   return new Promise(function(resolve, reject) {
-    const userId = data.user.userId.toString();
+    const userId = data.user.userId;
     const authTokenJwtBody = {};
     authTokenJwtBody.userId = userId;
     authTokenJwtBody.expireTime =

@@ -68,11 +68,11 @@ module.exports = {
   },
   passwordParamError: {
     status: 400,
-    detail: { code: "RC100450", message: "Password format is worng" }
+    detail: { code: "RC100450", message: "Password format is wrong" }
   },
   signInError: {
     status: 400,
-    detail: { code: "RC100451", message: "Email or Password is worng" }
+    detail: { code: "RC100451", message: "userId or Password is wrong" }
   },
   tokenExpired: {
     status: 403,
