@@ -2,7 +2,7 @@
 node_modules
 /dist
 utils/iamportConst.js
-/logs
+logs
 
 # local env files
 .env.local
