@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 /dist
+utils/iamportConst.js
+/logs
 
 # local env files
 .env.local
