@@ -51,6 +51,7 @@ function getOrderList(data) {
             discountPrice: '',
             totalPrice: '',
             productQty: '',
+            deliveryDate: '',
             purchaseMethod: '',
             imp_uid: '',
             merchant_uid: '',
@@ -72,6 +73,7 @@ function getOrderList(data) {
           order.discountPrice = orders[i].discountPrice;
           order.totalPrice = orders[i].totalPrice;
           order.productQty = orders[i].productQty;
+          order.deliveryDate = orders[i].deliveryDate;
           order.purchaseMethod = orders[i].purchaseMethod;
           order.imp_uid = orders[i].imp_uid;
           order.merchant_uid = orders[i].merchant_uid;
@@ -109,6 +111,7 @@ function saveOrderInfo(data) {
   return new Promise(function(resolve, reject) {
     const orders = new Orders();
     const order = data.body.order;
+    orders.userId = order.userId;
     orders.userName = order.userName;
     orders.postcode = order.postcode;
     orders.address = order.address;
@@ -123,6 +126,7 @@ function saveOrderInfo(data) {
     orders.discountPrice = order.discountPrice;
     orders.totalPrice = order.totalPrice;
     orders.productQty = order.productQty;
+    orders.deliveryDate = order.deliveryDate;
     orders.purchaseMethod = order.purchaseMethod;
     orders.merchant_uid = `merchant_${new Date().getTime()}`;
     orders.cdate = new Date();

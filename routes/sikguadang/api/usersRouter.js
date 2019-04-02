@@ -1,17 +1,17 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const UsersDocument = require("../../../models/documents/sikguadang/usersDocument");
-const bcrypt = require("bcrypt");
-const preProcessingUtils = require("../../../utils/preProcessingUtils");
-const validator = require("../../../utils/validationUtils");
-const authUtils = require("../../../utils/authUtils");
-const Promise = require("bluebird");
-const moment = require("moment");
-const Base64 = require("js-base64").Base64;
-const jwt = require("jwt-simple");
+const UsersDocument = require('../../../models/documents/sikguadang/usersDocument');
+const bcrypt = require('bcrypt');
+const preProcessingUtils = require('../../../utils/preProcessingUtils');
+const validator = require('../../../utils/validationUtils');
+const authUtils = require('../../../utils/authUtils');
+const Promise = require('bluebird');
+const moment = require('moment');
+const Base64 = require('js-base64').Base64;
+const jwt = require('jwt-simple');
 
 // ID CHECK
-router.post("/id_check", function(req, res, next) {
+router.post('/id_check', function(req, res, next) {
   preProcessingUtils
     .initData(req, false)
     .then(idConditionCheck)
@@ -39,7 +39,7 @@ function idConditionCheck(data) {
       {
         id: id,
         status: apiConst.status.active,
-        ldate: { $gt: moment().subtract(1, "years") }
+        ldate: { $gt: moment().subtract(1, 'years') }
       },
       function(err, count) {
         if (err) return reject(err);
@@ -51,7 +51,7 @@ function idConditionCheck(data) {
 }
 
 //SIGN_UP
-router.post("/sign_up", function(req, res, next) {
+router.post('/sign_up', function(req, res, next) {
   preProcessingUtils
     .initData(req, false)
     // .then(emailConditionCheck)
@@ -111,7 +111,7 @@ function createUser(data) {
 }
 
 //SIGN_IN
-router.post("/sign_in", function(req, res, next) {
+router.post('/sign_in', function(req, res, next) {
   preProcessingUtils
     .initData(req, false)
     .then(getUserByUserIdAndPassword)
@@ -139,7 +139,7 @@ function getUserByUserIdAndPassword(data) {
     query.userId = data.body.userId;
     query.password = data.body.password;
     query.status = apiConst.status.active;
-    query.ldate = { $gt: moment().subtract(1, "years") };
+    query.ldate = { $gt: moment().subtract(1, 'years') };
     const userId = data.body.userId;
     const password = data.body.password;
     // if (!util.isNullOrUndefined(userId) && !util.isNullOrUndefined(password)) {
@@ -203,7 +203,7 @@ function createToken(data) {
 }
 
 ///////////////////////////////////////////REISSUE TOKEN////////////////////////////////////////
-router.put("/restore", function(req, res, next) {
+router.put('/restore', function(req, res, next) {
   preProcessingUtils
     .initData(req, false)
     .then(checkRestoreTokenCondition)
@@ -307,6 +307,49 @@ function updateLastLoginDate(data) {
         return resolve();
       }
     );
+  });
+}
+
+// GET USER DATA
+router.get('/profile_edit', function(req, res, next) {
+  preProcessingUtils
+    .initData(req, true)
+    .then(authUtils.getUserIdByToken)
+    .then(getUserByUserId)
+    .then(function(data) {
+      res.json(data.user);
+    })
+    .catch(function(ex) {
+      if (ex instanceof Error) {
+        log.error(ex.message);
+        log.error(ex.stack);
+        res
+          .status(responseCode.internalError.status)
+          .json(responseCode.internalError.detail);
+      } else {
+        res.status(ex.status).json(ex.detail);
+      }
+    });
+});
+function getUserByUserId(data) {
+  const userId = data.userId;
+  return new Promise(function(resolve, reject) {
+    UsersDocument.findOne({ userId: userId })
+      .where({
+        status: apiConst.status.active,
+        ldate: { $gt: moment().subtract(1, 'years') }
+      })
+      .exec(function(err, userDocument) {
+        if (err) return reject(err);
+        const user = {};
+        user.userId = userDocument.userId;
+        user.userName = userDocument.userName;
+        user.phoneNumber = userDocument.phoneNumber;
+        user.email = userDocument.email;
+
+        data.user = user;
+        return resolve(data);
+      });
   });
 }
 
