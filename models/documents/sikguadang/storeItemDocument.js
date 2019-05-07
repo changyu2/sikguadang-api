@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const ObjectId = mongoose.Schema.Types.ObjectId;
 
-const storeItemSchema = new Schema({
+const storeItemSchema = mongoose.Schema({
   title: String,
   description: String,
   thumbnailUrl: [],
@@ -24,7 +24,7 @@ const storeItemSchema = new Schema({
   cdate: { type: Date, default: Date.now },
   sdate: { type: Date, default: Date.now },
   edate: { type: Date, default: Date.now },
-  authorId: { type: Schema.Types.ObjectId, ref: 'Author' },
+  authorId: { type: ObjectId, ref: 'Author' },
   productDetailCards: [],
   productInfoCards: []
 });
