@@ -16,6 +16,7 @@ const mongoose = require('mongoose');
 mongoose.set('useFindAndModify', false);
 
 // routers
+const noticesRouter = require('./routes/sikguadang/api/noticesRouter');
 const storeRouter = require('./routes/sikguadang/api/storeRouter');
 const articlesRouter = require('./routes/sikguadang/api/articlesRouter');
 const usersRouter = require('./routes/sikguadang/api/usersRouter');
@@ -74,6 +75,7 @@ mongoose.connect(config.mongodb.url, {
 });
 
 // Router
+app.use('/v1/notices', noticesRouter);
 app.use('/v1/store', storeRouter);
 app.use('/v1/articles', articlesRouter);
 app.use('/v1/users', usersRouter);
