@@ -37,7 +37,7 @@ function idConditionCheck(data) {
 
     UsersDocument.countDocuments(
       {
-        id: id,
+        userId: id,
         status: apiConst.status.active,
         ldate: { $gt: moment().subtract(1, 'years') }
       },
@@ -350,6 +350,83 @@ function getUserByUserId(data) {
         data.user = user;
         return resolve(data);
       });
+  });
+}
+
+// EDIT USER DATA
+
+router.get('/profile_edit', function(req, res, next) {
+  preProcessingUtils
+    .initData(req, true)
+    .then(authUtils.getUserIdByToken)
+    .then(updateUserInfo)
+    .then(assembleUserInfoByDocument)
+    .then(function(data) {
+      res.json(data.userInfo);
+    })
+    .catch(function(err) {
+      if (err instanceof Error) {
+        log.error(err.message);
+        log.error(err.stack);
+        res
+          .status(responseCode.internalError.status)
+          .json(responseCode.internalError.detail);
+      } else {
+        res.status(err.status).json(err.detail);
+      }
+    });
+});
+function updateUserInfo(data) {
+  return new Promise(function(resolve, reject) {
+    const userId = data.userId;
+    const profile = data.body.profile;
+
+    UsersDocument.findOne({ userId: userId }).exec(function(err, userDocument) {
+      if (err) return reject(err);
+      if (!userDocument) return reject(responseCode.resourceNotFound);
+      userDocument.password = profile.password
+        ? profile.password
+        : userDocument.password;
+      userDocument.userName = profile.userName ? profile.userName : '';
+      userDocument.phoneNumber = profile.phoneNumber ? profile.phoneNumber : '';
+      userDocument.email = profile.email ? profile.email : '';
+
+      if (profile.password) {
+        let isAvailablePassword = validator.passwordValidate(profile.password);
+        if (!isAvailablePassword) {
+          return reject(responseCode.passwordParamError);
+        }
+        const saltRounds = 10;
+        bcrypt.genSalt(saltRounds, function(err, salt) {
+          bcrypt.hash(userDocument.password, salt, function(err, hash) {
+            userDocument.password = hash;
+            userDocument.save(function(err, result) {
+              if (err) return reject(err);
+              data.userDocument = result;
+              return resolve(data);
+            });
+          });
+        });
+      } else {
+        userDocument.save(function(err, result) {
+          if (err) return reject(err);
+          data.userDocument = result;
+          return resolve(data);
+        });
+      }
+    });
+  });
+}
+function assembleUserInfoByDocument(data) {
+  return new Promise(function(resolve, reject) {
+    const userInfo = {};
+    userInfo.email = data.userDocument.email;
+    userInfo.password = data.userDocument.password;
+    userInfo.userName = data.userDocument.userName;
+    userInfo.phoneNumber = data.userDocument.phoneNumber;
+    data.userInfo = userInfo;
+    // console.log(userInfo)
+    return resolve(data);
   });
 }
 
