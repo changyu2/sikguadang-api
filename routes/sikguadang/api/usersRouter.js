@@ -355,7 +355,7 @@ function getUserByUserId(data) {
 
 // EDIT USER DATA
 
-router.get('/profile_edit', function(req, res, next) {
+router.put('/profile_edit', function(req, res, next) {
   preProcessingUtils
     .initData(req, true)
     .then(authUtils.getUserIdByToken)
@@ -387,9 +387,14 @@ function updateUserInfo(data) {
       userDocument.password = profile.password
         ? profile.password
         : userDocument.password;
-      userDocument.userName = profile.userName ? profile.userName : '';
-      userDocument.phoneNumber = profile.phoneNumber ? profile.phoneNumber : '';
-      userDocument.email = profile.email ? profile.email : '';
+      userDocument.phoneNumber =
+        profile.phoneFirst && profile.phoneMiddle && profile.phoneLast
+          ? `${profile.phoneFirst}-${profile.phoneMiddle}-${profile.phoneLast}`
+          : '';
+      userDocument.email =
+        profile.emailId && profile.domain
+          ? `${profile.emailId}@${profile.domain}`
+          : '';
 
       if (profile.password) {
         let isAvailablePassword = validator.passwordValidate(profile.password);
@@ -422,7 +427,6 @@ function assembleUserInfoByDocument(data) {
     const userInfo = {};
     userInfo.email = data.userDocument.email;
     userInfo.password = data.userDocument.password;
-    userInfo.userName = data.userDocument.userName;
     userInfo.phoneNumber = data.userDocument.phoneNumber;
     data.userInfo = userInfo;
     // console.log(userInfo)
