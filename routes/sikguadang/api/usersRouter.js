@@ -430,4 +430,36 @@ function assembleUserInfoByDocument(data) {
   });
 }
 
+// DELETE USER
+
+router.delete('/delete_user', function(req, res, next) {
+  preProcessingUtils
+    .initData(req, true)
+    .then(authUtils.getUserIdByToken)
+    .then(deleteUser)
+    .then(function(data) {
+      res.status(responseCode.success.status).json(responseCode.success.detail);
+    })
+    .catch(function(ex) {
+      if (ex instanceof Error) {
+        log.error(ex.message);
+        log.error(ex.stack);
+        res.json(ex);
+      } else {
+        res.json(ex);
+      }
+    });
+});
+function deleteUser(data) {
+  return new Promise(function(resolve, reject) {
+    const userId = data.userId;
+
+    UsersDocument.findOneAndRemove({ userId: userId }, function(err, result) {
+      if (err) return reject(err);
+      data.result = result;
+      return resolve(data);
+    });
+  });
+}
+
 module.exports = router;
