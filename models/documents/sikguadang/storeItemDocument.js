@@ -15,6 +15,8 @@ const storeItemSchema = mongoose.Schema({
   optionItem3Price: Number,
   optionItem4Name: String,
   optionItem4Price: Number,
+  weight: String,
+  expirationDate: String,
   category: Number,
   soldOut: { type: Boolean, default: false },
   limited: { type: Boolean, default: false },

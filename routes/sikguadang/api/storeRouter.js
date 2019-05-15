@@ -74,6 +74,8 @@ function getStoreItemList(data) {
         thumbnailUrl: 1,
         price: 1,
         discountPrice: 1,
+        weight: 1,
+        expirationDate: 1,
         category: 1,
         soldOut: 1,
         limited: 1,
@@ -103,6 +105,8 @@ function getStoreItemList(data) {
           storeItem.optionItem3Price = storeItemDocuments[i].optionItem3Price;
           storeItem.optionItem4Name = storeItemDocuments[i].optionItem4Name;
           storeItem.optionItem4Price = storeItemDocuments[i].optionItem4Price;
+          storeItem.weight = storeItemDocuments[i].weight;
+          storeItem.expirationDate = storeItemDocuments[i].expirationDate;
           storeItem.category = storeItemDocuments[i].category;
           storeItem.soldOut = storeItemDocuments[i].soldOut;
           storeItem.limited = storeItemDocuments[i].limited;
@@ -163,6 +167,8 @@ function getStoreItem1(data) {
         thumbnailUrl: 1,
         price: 1,
         discountPrice: 1,
+        weight: 1,
+        expirationDate: 1,
         category: 1,
         soldOut: 1,
         limited: 1,
@@ -193,6 +199,8 @@ function getStoreItem1(data) {
           storeItem.optionItem4Name = storeItemDocuments[i].optionItem4Name;
           storeItem.optionItem4Price = storeItemDocuments[i].optionItem4Price;
           storeItem.category = storeItemDocuments[i].category;
+          storeItem.weight = storeItemDocuments[i].weight;
+          storeItem.expirationDate = storeItemDocuments[i].expirationDate;
           storeItem.soldOut = storeItemDocuments[i].soldOut;
           storeItem.limited = storeItemDocuments[i].limited;
           storeItem.hot = storeItemDocuments[i].hot;
@@ -252,6 +260,8 @@ function getStoreItem2(data) {
         thumbnailUrl: 1,
         price: 1,
         discountPrice: 1,
+        weight: 1,
+        expirationDate: 1,
         category: 1,
         soldOut: 1,
         limited: 1,
@@ -281,6 +291,8 @@ function getStoreItem2(data) {
           storeItem.optionItem3Price = storeItemDocuments[i].optionItem3Price;
           storeItem.optionItem4Name = storeItemDocuments[i].optionItem4Name;
           storeItem.optionItem4Price = storeItemDocuments[i].optionItem4Price;
+          storeItem.weight = storeItemDocuments[i].weight;
+          storeItem.expirationDate = storeItemDocuments[i].expirationDate;
           storeItem.category = storeItemDocuments[i].category;
           storeItem.soldOut = storeItemDocuments[i].soldOut;
           storeItem.limited = storeItemDocuments[i].limited;
@@ -341,6 +353,8 @@ function getStoreItem3(data) {
         thumbnailUrl: 1,
         price: 1,
         discountPrice: 1,
+        weight: 1,
+        expirationDate: 1,
         category: 1,
         soldOut: 1,
         limited: 1,
@@ -370,6 +384,8 @@ function getStoreItem3(data) {
           storeItem.optionItem3Price = storeItemDocuments[i].optionItem3Price;
           storeItem.optionItem4Name = storeItemDocuments[i].optionItem4Name;
           storeItem.optionItem4Price = storeItemDocuments[i].optionItem4Price;
+          storeItem.weight = storeItemDocuments[i].weight;
+          storeItem.expirationDate = storeItemDocuments[i].expirationDate;
           storeItem.category = storeItemDocuments[i].category;
           storeItem.soldOut = storeItemDocuments[i].soldOut;
           storeItem.limited = storeItemDocuments[i].limited;
@@ -438,6 +454,8 @@ function getStoreItemById(data) {
       storeItem.optionItem3Price = storeItemDocument.optionItem3Price;
       storeItem.optionItem4Name = storeItemDocument.optionItem4Name;
       storeItem.optionItem4Price = storeItemDocument.optionItem4Price;
+      storeItem.weight = storeItemDocument.weight;
+      storeItem.expirationDate = storeItemDocument.expirationDate;
       storeItem.category = storeItemDocument.category;
       storeItem.soldOut = storeItemDocument.soldOut;
       storeItem.limited = storeItemDocument.limited;
