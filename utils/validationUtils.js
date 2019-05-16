@@ -43,7 +43,7 @@ exports.emailValidate = function(email) {
 exports.passwordValidate = function(password) {
   if (!password) return false; //No Input
   if (password.search(/\s/) != -1) return false; //There must be no blank
-  if (password.length < 10) return false;
+  if (password.length < 10 && password.length > 16) return false;
 
   let chk = 0;
   if (password.search(/[0-9]/g) != -1) chk++;

@@ -61,13 +61,16 @@ function getStoreItemList(data) {
     const offset = util.isNullOrUndefined(data.query.offset)
       ? 0
       : parseInt(data.query.offset);
+    const sort = util.isNullOrUndefined(data.query.sort)
+      ? '-sdate'
+      : data.query.sort;
     StoreItemDocument.find({
       status: apiConst.status.active,
       sdate: { $lte: data.now }
     })
       .limit(limit)
       .skip(offset)
-      .sort('-sdate')
+      .sort(sort)
       .select({
         title: 1,
         description: 1,
