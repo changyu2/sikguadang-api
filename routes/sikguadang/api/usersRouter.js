@@ -466,4 +466,47 @@ function deleteUser(data) {
   });
 }
 
+// FIND USER ID
+router.post('/findId', function(req, res, next) {
+  preProcessingUtils
+    .initData(req, false)
+    .then(getUserByUserNameAndUserEmail)
+    .then(function(data) {
+      res.json(data.user);
+    })
+    .catch(function(err) {
+      if (err instanceof Error) {
+        log.error(err.message);
+        log.error(err.stack);
+        res
+          .status(responseCode.internalError.status)
+          .json(responseCode.internalError.detail);
+      } else {
+        res.status(err.status).json(err.detail);
+      }
+    });
+});
+function getUserByUserNameAndUserEmail(data) {
+  return new Promise(function(resolve, reject) {
+    const userName = data.body.userName;
+    const email = data.body.email;
+    UsersDocument.findOne({ userName: userName, email: email })
+      .where({
+        status: apiConst.status.active,
+        ldate: { $gt: moment().subtract(1, 'years') }
+      })
+      .exec(function(err, userDocument) {
+        if (err) return reject(err);
+        if (!userDocument) return reject(responseCode.resourceNotFound);
+        const user = {};
+        user.userId = userDocument.userId;
+        user.userName = userDocument.userName;
+        user.email = userDocument.email;
+
+        data.user = user;
+        return resolve(data);
+      });
+  });
+}
+
 module.exports = router;
