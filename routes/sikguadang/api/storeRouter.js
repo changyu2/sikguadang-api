@@ -55,21 +55,13 @@ router.get('/', function(req, res, next) {
 });
 function getStoreItemList(data) {
   return new Promise(function(resolve, reject) {
-    const limit = util.isNullOrUndefined(data.query.limit)
-      ? 20
-      : parseInt(data.query.limit);
-    const offset = util.isNullOrUndefined(data.query.offset)
-      ? 0
-      : parseInt(data.query.offset);
     const sort = util.isNullOrUndefined(data.query.sort)
-      ? '-sdate'
+      ? '-cdate'
       : data.query.sort;
     StoreItemDocument.find({
       status: apiConst.status.active,
       sdate: { $lte: data.now }
     })
-      .limit(limit)
-      .skip(offset)
       .sort(sort)
       .select({
         title: 1,
@@ -150,20 +142,15 @@ router.get('/1', function(req, res, next) {
 });
 function getStoreItem1(data) {
   return new Promise(function(resolve, reject) {
-    const limit = util.isNullOrUndefined(data.query.limit)
-      ? 20
-      : parseInt(data.query.limit);
-    const offset = util.isNullOrUndefined(data.query.offset)
-      ? 0
-      : parseInt(data.query.offset);
+    const sort = util.isNullOrUndefined(data.query.sort)
+      ? '-cdate'
+      : data.query.sort;
     StoreItemDocument.find({
       category: 1,
       status: apiConst.status.active,
       sdate: { $lte: data.now }
     })
-      .limit(limit)
-      .skip(offset)
-      .sort('-sdate')
+      .sort(sort)
       .select({
         title: 1,
         description: 1,
@@ -243,20 +230,15 @@ router.get('/2', function(req, res, next) {
 });
 function getStoreItem2(data) {
   return new Promise(function(resolve, reject) {
-    const limit = util.isNullOrUndefined(data.query.limit)
-      ? 20
-      : parseInt(data.query.limit);
-    const offset = util.isNullOrUndefined(data.query.offset)
-      ? 0
-      : parseInt(data.query.offset);
+    const sort = util.isNullOrUndefined(data.query.sort)
+      ? '-cdate'
+      : data.query.sort;
     StoreItemDocument.find({
       category: 2,
       status: apiConst.status.active,
       sdate: { $lte: data.now }
     })
-      .limit(limit)
-      .skip(offset)
-      .sort('-sdate')
+      .sort(sort)
       .select({
         title: 1,
         description: 1,
@@ -336,20 +318,15 @@ router.get('/3', function(req, res, next) {
 });
 function getStoreItem3(data) {
   return new Promise(function(resolve, reject) {
-    const limit = util.isNullOrUndefined(data.query.limit)
-      ? 20
-      : parseInt(data.query.limit);
-    const offset = util.isNullOrUndefined(data.query.offset)
-      ? 0
-      : parseInt(data.query.offset);
+    const sort = util.isNullOrUndefined(data.query.sort)
+      ? '-cdate'
+      : data.query.sort;
     StoreItemDocument.find({
       category: 3,
       status: apiConst.status.active,
       sdate: { $lte: data.now }
     })
-      .limit(limit)
-      .skip(offset)
-      .sort('-sdate')
+      .sort(sort)
       .select({
         title: 1,
         description: 1,
