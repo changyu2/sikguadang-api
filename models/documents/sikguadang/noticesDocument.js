@@ -3,6 +3,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const noticeSchema = mongoose.Schema({
   title: String,
+  number: Number,
   text: String,
   imageCards: [],
   status: { type: String, default: apiConst.status.active },

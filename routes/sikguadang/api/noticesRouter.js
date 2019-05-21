@@ -70,6 +70,7 @@ function getNoticesList(data) {
       .sort('-sdate')
       .select({
         title: 1,
+        number: 1,
         text: 1,
         imageCards: 1,
         authorId: 1,
@@ -81,6 +82,7 @@ function getNoticesList(data) {
         for (let i in noticeDocuments) {
           const notice = {};
           notice.noticeId = noticeDocuments[i]._id;
+          notice.number = noticeDocuments[i].number;
           notice.title = noticeDocuments[i].title;
           notice.text = noticeDocuments[i].text;
           notice.imageCards = noticeDocuments[i].imageCards;
@@ -128,6 +130,7 @@ function getNoticeById(data) {
       const notice = {};
 
       notice.noticeId = noticeDocument._id;
+      notice.number = noticeDocument.number;
       notice.title = noticeDocument.title;
       notice.text = noticeDocument.text;
       notice.imageCards = noticeDocument.imageCards;
