@@ -3,6 +3,7 @@ node_modules
 /dist
 utils/iamportConst.js
 logs
+envconfig/local.js
 
 # local env files
 .env.local
