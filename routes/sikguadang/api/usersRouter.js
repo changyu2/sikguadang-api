@@ -9,6 +9,13 @@ const Promise = require('bluebird');
 const moment = require('moment');
 const Base64 = require('js-base64').Base64;
 const jwt = require('jwt-simple');
+const generator = require('generate-password');
+
+const awsKor = require('aws-sdk');
+const awsVirginia = require('aws-sdk');
+awsKor.config.update(config.aws.kor);
+awsVirginia.config.update(config.aws.virginia);
+const ses = new awsVirginia.SES({ apiVersion: '2010-12-01' });
 
 // ID CHECK
 router.post('/id_check', function(req, res, next) {
@@ -506,6 +513,103 @@ function getUserByUserNameAndUserEmail(data) {
         data.user = user;
         return resolve(data);
       });
+  });
+}
+
+// FIND PASSWORD
+router.post('/findPassword', function(req, res, next) {
+  preProcessingUtils
+    .initData(req, false)
+    .then(changePasswordToTempPassword)
+    .then(assembleUserInfoByDocument)
+    .then(sendEmail)
+    .then(function(data) {
+      res.status(responseCode.success.status).json(responseCode.success.detail);
+    })
+    .catch(function(ex) {
+      if (ex instanceof Error) {
+        log.error(ex.message);
+        log.error(ex.stack);
+        res.json(ex);
+      } else {
+        res.json(ex);
+      }
+    });
+});
+function changePasswordToTempPassword(data) {
+  return new Promise(function(resolve, reject) {
+    const userId = data.body.userId;
+    const email = data.body.email;
+    UsersDocument.findOne({ userId: userId, email: email }).exec(function(
+      err,
+      userDocument
+    ) {
+      if (err) return reject(err);
+      if (!userDocument) return reject(responseCode.resourceNotFound);
+      let tempPassword = generator.generate({
+        length: 10,
+        numbers: true
+      });
+      userDocument.password = tempPassword;
+
+      if (tempPassword) {
+        let isAvailablePassword = validator.passwordValidate(tempPassword);
+        if (!isAvailablePassword) {
+          return reject(responseCode.passwordParamError);
+        }
+        const saltRounds = 10;
+        bcrypt.genSalt(saltRounds, function(err, salt) {
+          bcrypt.hash(userDocument.password, salt, function(err, hash) {
+            userDocument.password = hash;
+            userDocument.save(function(err, result) {
+              if (err) return reject(err);
+              data.userDocument = result;
+              data.userDocument.password = tempPassword;
+              return resolve(data);
+            });
+          });
+        });
+      } else {
+        userDocument.save(function(err, result) {
+          if (err) return reject(err);
+          data.userDocument = result;
+          return resolve(data);
+        });
+      }
+    });
+  });
+}
+function sendEmail(data) {
+  return new Promise(function(resolve, reject) {
+    const to = [data.userInfo.email];
+    const from = apiConst.email.address.noreply;
+    const passwordResetHtml = apiConst.email.html.passwordReset.replace(
+      'TEMPPASSWORD',
+      data.userInfo.password
+    );
+    const params = {
+      Source: from,
+      Destination: { ToAddresses: to },
+      Message: {
+        Subject: {
+          Data: apiConst.email.subject.passwordReset,
+          Charset: 'utf-8'
+        },
+        Body: {
+          Html: {
+            Data: passwordResetHtml,
+            Charset: 'utf-8'
+          }
+        }
+      }
+    };
+    ses.sendEmail(params, function(err, result) {
+      if (err) {
+        log.error('auth mail send failure!');
+        log.error(err);
+      }
+      resolve();
+    });
   });
 }
 
