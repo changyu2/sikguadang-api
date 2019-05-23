@@ -2,6 +2,7 @@ global.config = require('./config.js');
 global.responseCode = require('./utils/responseCode');
 global.apiConst = require('./utils/apiConst');
 global.util = require('util');
+global.autoIncrement = require('mongoose-auto-increment');
 
 const Logger = require('./utils/logger');
 global.log = new Logger('./logs/error.log');
@@ -17,6 +18,7 @@ mongoose.set('useFindAndModify', false);
 
 // routers
 const noticesRouter = require('./routes/sikguadang/api/noticesRouter');
+const inquiriesRouter = require('./routes/sikguadang/api/inquiriesRouter');
 const storeRouter = require('./routes/sikguadang/api/storeRouter');
 const articlesRouter = require('./routes/sikguadang/api/articlesRouter');
 const usersRouter = require('./routes/sikguadang/api/usersRouter');
@@ -71,11 +73,13 @@ mongoose.Promise = require('bluebird');
 
 mongoose.connect(config.mongodb.url, {
   // useMongoClient: true,
+  useCreateIndex: true,
   useNewUrlParser: true
 });
 
 // Router
 app.use('/v1/notices', noticesRouter);
+app.use('/v1/inquiries', inquiriesRouter);
 app.use('/v1/store', storeRouter);
 app.use('/v1/articles', articlesRouter);
 app.use('/v1/users', usersRouter);
