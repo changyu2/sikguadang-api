@@ -119,7 +119,7 @@ function saveOrderInfo(data) {
     orders.recipientName = order.recipientName;
     orders.recipientPhoneNumber = order.recipientPhoneNumber;
     orders.productName = order.productName;
-    orders.productImage = order.productImage;
+    orders.productImage = order.productImg;
     orders.optionItemName = order.optionItemName;
     orders.optionItemPrice = order.optionItemPrice;
     orders.price = order.price;
