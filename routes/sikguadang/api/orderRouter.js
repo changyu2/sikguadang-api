@@ -161,12 +161,12 @@ router.put('/:merchant_uid', function(req, res, next) {
 });
 function updateOrderInfo(data) {
   return new Promise(function(resolve, reject) {
-    const order = data.body.order;
+    const status = data.body.status;
     const merchant_uid = data.params.merchant_uid;
     Orders.findOne({ merchant_uid: merchant_uid }).exec(function(err, orders) {
       if (err) return reject(err);
       if (!orders) return reject(responseCode.resourceNotFound);
-      orders.status = order.status ? order.status : '';
+      orders.status = status ? status : '';
       orders.edate = new Date();
 
       orders.save(function(err, result) {
