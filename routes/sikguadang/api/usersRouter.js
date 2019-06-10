@@ -522,9 +522,10 @@ router.post('/findPassword', function(req, res, next) {
     .initData(req, false)
     .then(changePasswordToTempPassword)
     .then(assembleUserInfoByDocument)
-    .then(sendEmail)
+    // .then(sendEmail)
     .then(function(data) {
-      res.status(responseCode.success.status).json(responseCode.success.detail);
+      res.json(data);
+      // res.status(responseCode.success.status).json(responseCode.success.detail);
     })
     .catch(function(ex) {
       if (ex instanceof Error) {
